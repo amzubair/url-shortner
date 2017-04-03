@@ -1,0 +1,49 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "description": "url shorting microservice",
+  "main": "src/index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "babel src -d dist",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amzubair/url-shortner.git"
+  },
+  "keywords": [
+    "url",
+    "shortening"
+  ],
+  "author": "Mohamed Jubair <amzubair@live.com> (http://www.amzubair.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amzubair/url-shortner/issues"
+  },
+  "homepage": "https://github.com/amzubair/url-shortner#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-preset-env": "^1.3.2",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "jest": "^19.0.2",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "helmet": "^3.5.0",
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1"
+  }
+}

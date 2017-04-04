@@ -25,6 +25,6 @@ app.use([urlRoute])
 
 app.listen(PORT, (err) => {
   if (err) return console.error(err)
-  console.log(`Application running on port ${PORT}`)
+  console.log(`Application running on port ${PORT} in ${process.env.NODE_ENV} mode`)
 })
 

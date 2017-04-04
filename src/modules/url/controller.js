@@ -7,7 +7,6 @@ export const createShort = (req, res) => {
   if (!longUrl) return res.status(400).json({ error: 'You must provide a url' })
   if (!isURL(longUrl)) return res.status(400).json({ error: 'You must provide a valid url' })
 
-
   Url.findOne({ longUrl })
     .then(
     url => {
@@ -23,6 +22,20 @@ export const createShort = (req, res) => {
     },
     error => res.status(400).json({ error: error })
     )
+}
 
+export const redirectUrl = (req, res) => {
+  const { url } = req.params
 
+  Url.findOne({ shortUrl: url })
+    .then(
+    u => {
+      if (u) {
+        return res.redirect(`http://${u.longUrl}`)
+      } else {
+        return res.status(404).json({ message: 'Not Found' })
+      }
+    },
+    error => res.statu(400).json({ error: error })
+    )
 }

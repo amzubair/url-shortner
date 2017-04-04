@@ -7,4 +7,3 @@ export default (config) => {
     .once('open', () => console.log('MONGODB Connected'))
     .on('error', (err) => console.log('Error: ', err))
 }
-

@@ -30,4 +30,3 @@ UrlSchema.pre('save', function (next, done) {
 })
 
 export default mongoose.model('Url', UrlSchema)
-

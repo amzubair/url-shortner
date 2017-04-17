@@ -1,0 +1,30 @@
+version: '2'
+services:
+    mongodb:
+        image: mongo
+        volumes:
+            - data:/data/db
+        ports:
+            - 27018:27017
+        # networks:
+        #     - nodeapp-network
+    web:
+        build: .
+        environment:
+          - FORCE_COLOR=1 # Terminal color support for Chalk package
+        volumes:
+            - .:/var/app
+        ports:
+            - '3001:3000'
+        depends_on:
+            - 'mongodb'
+        # networks:
+        #     - nodeapp-network
+
+volumes:
+    data:
+        driver: local
+
+# networks:
+#     nodeapp-network:
+#         driver: bridge

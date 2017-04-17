@@ -11,8 +11,10 @@
     "prestart": "npm run -s build",
     "start": "node dist/index.js",
     "lint": "eslint src --fix",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js -w src --exec babel-node",
-    "test": "jest"
+    "dev": "NODE_ENV=development nodemon  -L src/index.js -w src --exec babel-node",
+    "test": "jest",
+    "docker:dev": "docker-compose up -d & docker attach urlshortner_web_1",
+    "docker:rm": "docker-compose down"
   },
   "repository": {
     "type": "git",

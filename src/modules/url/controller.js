@@ -39,3 +39,7 @@ export const redirectUrl = (req, res) => {
     error => res.statu(400).json({ error: error })
     )
 }
+
+export const home = (req, res) => {
+  res.send('hello world from docker-compose!!!!')
+}

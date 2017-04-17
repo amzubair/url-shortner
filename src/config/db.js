@@ -1,9 +1,9 @@
 import mongoose from 'mongoose'
 
-export default (config) => {
+export default (db) => {
   mongoose.Promise = global.Promise
-  mongoose.connect(config)
+  mongoose.connect(db)
   mongoose.connection
-    .once('open', () => console.log('MONGODB Connected'))
+    .once('open', () => console.info(`==> 📁  Connected to Database ${db}`))
     .on('error', (err) => console.log('Error: ', err))
 }
